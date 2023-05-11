@@ -1,0 +1,79 @@
+{
+  cvs{
+    id
+    name
+    user{
+      id
+      name
+    }
+    skills{
+      id
+      designation
+    }
+  }
+}
+
+{
+  cvById(id:2){
+    name
+    job
+    skills{
+      designation
+    }
+  }
+}
+
+mutation{
+  addCv(input:{name:"cv5",job:"job5",age:21,idUser:7}){
+    id
+    name
+    job
+    age
+    user{
+      id
+      name
+    }
+    skills{
+      id
+    }
+  }
+}
+
+mutation{
+  updateCv(input:{id:2,name:"cv22",age:21,job:"job22",idUser:2}){
+    id
+    name
+    job
+    age
+    user{
+      id
+      name
+    }
+    skills{
+      id
+    }
+  }
+}
+
+mutation{
+  deleteCv(id:5){
+    id
+    name
+    job
+    age
+    user{
+      id
+      name
+    }
+    skills{
+      id
+    }
+  }
+}
+
+subscription{
+  cvAdded{
+    id
+    name
+  }
+}
